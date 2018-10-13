@@ -6,7 +6,7 @@ Dans le cadre d'un TP en Master 1 sur l'utilisation de Docker nous devions réal
 - [ ] Avoir docker-compose : https://docs.docker.com/compose/
 
 ## Utilisation
-- [ ] Se placer à la racine du projet (/docker-dash3)
+- [ ] Se placer à la racine du projet (ou se situe le docker-compose.yml)
 - [ ] Lancer un build:
 `docker-compose up` 
 `docker-compose up --build`

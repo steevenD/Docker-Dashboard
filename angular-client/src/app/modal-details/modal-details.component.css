@@ -1,0 +1,28 @@
+.title {
+    background: black;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    display:flex;
+}
+
+.btn-close{
+    cursor: pointer;
+    color: white;    
+}
+
+.details{
+    flex-grow: 1;
+}
+
+.fermer{
+    text-align: center;
+     cursor: pointer; 
+     font-weight:bold;
+     padding: 25px;
+}
+
+.contenu {
+    padding: 25px;
+}

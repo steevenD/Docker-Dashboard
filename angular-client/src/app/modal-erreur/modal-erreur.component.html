@@ -1,0 +1,23 @@
+<div class="title">
+  <p class="erreur">Erreur</p> 
+  <p class="btn-close" (click)="hancleClickClose()">X</p>
+</div>
+<div class='contenu'>
+  <h2>Rebuilder le serveur CTRL + C et docker-compose up --build </h2>
+  {{data.erreur}}
+  <hr>
+  <div *ngIf='data.exemple'>
+    <h3>Exemple</h3>
+    <p>Image: vuejs/ci:latest</p>
+    <p>Nom: myVueJS</p>
+    <p>RAM: 4</p>
+    <p>CPU: 1</p>
+    <p>Volume source: /tmp</p>
+    <p>Volume destination: /tmp</p>
+    <p>Port hote: 8080</p>
+    <p>Port export: 80/tcp</p>
+    
+  </div>
+</div>
+
+<div (click)="hancleClickClose()" class='fermer'>FERMER</div>

@@ -1,0 +1,8 @@
+  <div class="variable">
+    <div class="input-form">
+      <div class="form-group" style="width: 300px" [formGroup]="fGroup">
+        <input type="text" class="form-control" placeholder="VAR=value" formControlName="variable">
+      </div>
+    </div>
+    <div (click)="handleClickdeleteVariable()" class="btn-delete">X</div>
+  </div>

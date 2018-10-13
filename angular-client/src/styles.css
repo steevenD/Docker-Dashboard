@@ -1,0 +1,14 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+mat-dialog-container {
+    padding: 0 !important; 
+}
+
+.loading{
+    margin-left: 50%;
+    margin-top: 25%;
+}
+
+.mat-progress-spinner{
+    position: absolute !important;
+}

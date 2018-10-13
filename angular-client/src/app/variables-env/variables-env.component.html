@@ -1,0 +1,10 @@
+<div [formGroup]="fGroup" class="f" *ngIf="fGroup">
+  <div formArrayName="variables">
+    <app-variable-env
+        *ngFor="let variableFormGroup of fArray?.controls; let i = index"
+        [formGroupName]="i"
+        [fGroup]="variableFormGroup"
+        (deleteVariable)="handleClickDeleteVariable($event)"></app-variable-env>
+  </div>
+  <button type="button" class="btn btn-success" (click)="handleClickAddVariable()">Ajouter une variable d'environnement</button>
+</div>

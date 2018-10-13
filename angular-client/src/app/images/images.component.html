@@ -1,0 +1,26 @@
+<mat-spinner class="loading" *ngIf="displayLoad"></mat-spinner>
+
+<div class="container">
+  <div [style.margin-top.px]="10" class="row">
+    <h3>Liste des Images</h3>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <!--<th scope="col">ID</th>-->
+          <th scope="col">RepoTag</th>                   
+          <th scope="col">Taille</th>
+          <th scope="col">Créer</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of images">
+          <!--<th scope="row">{{c.Id}}</th>-->
+          <td>{{i?.RepoTags}}</td>               
+          <td>{{i?.Size}}</td>
+          <td>{{i?.Created}}</td>               
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

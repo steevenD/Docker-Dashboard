@@ -1,0 +1,35 @@
+<mat-spinner class="loading" *ngIf="displayLoad"></mat-spinner>
+
+<div class="container">
+  <div [style.margin-top.px]="10" class="row">
+    <h3>Liste des conteneurs</h3>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <!--<th scope="col">ID</th>-->
+          <th scope="col">Nom</th>
+          <th scope="col">Image</th>
+          <th scope="col">Statut</th>          
+          <th scope="col">Ports</th>          
+          <th scope="col"></th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of containers">
+          <!--<th scope="row">{{c.Id}}</th>-->
+          <td>{{c?.Names[0]}}</td>
+          <td>{{c?.Image}}</td>
+          <td>{{c?.Status}}</td>          
+          <td>{{c?.Ports[0]?.PrivatePort +'>'+ c?.Ports[0]?.PublicPort +'/'+ c?.Ports[0]?.Type}}</td>          
+          <td style="display: flex;">
+            <button (click)="handleClickRemoveConteneur(c.Id)" *ngIf="!displayStopOrDelete(c.Status)" class="btn btn-danger">Supprimer</button>
+            <button (click)="handleClickStopConteneur(c.Id)" *ngIf="displayStopOrDelete(c.Status)" class="btn btn-warning">Stop</button>
+            <button (click)="handleClickLogsConteneur(c.Id)" class="btn btn-info">Logs</button> 
+            <button (click)="handleClickDetailsConteneur(c.Id, c?.Ports[0])" class="btn btn-success">Détails</button>             
+          </td>          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

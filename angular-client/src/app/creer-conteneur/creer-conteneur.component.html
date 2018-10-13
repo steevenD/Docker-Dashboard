@@ -1,0 +1,59 @@
+<mat-spinner class="loading" *ngIf="displayLoad"></mat-spinner>
+
+<div *ngIf="fGroup" style="margin :5% 10%">
+  <form [formGroup]="fGroup">
+    <div style="display:flex; justify-content:space-around">
+    <div style="width: 500px">
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="text" class="form-control" id="image" placeholder="Entrez une image" formControlName="image">
+    </div>
+
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" class="form-control" id="nom" placeholder="Entrez un nom" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="ram">RAM (MB)</label>
+      <input type="number" class="form-control" id="ram" placeholder="Entrez une RAM max" formControlName="ram">
+    </div>
+    
+
+    <div class="form-group">
+      <label for="cpu">CPU</label>
+      <input type="number" class="form-control" id="cpu" placeholder="Entrez un CPU max" formControlName="cpu">
+    </div>
+
+    <div style="display:flex; justify-content: space-between;">
+      <div class="form-group" style="width: 220px">
+        <label for="volumeMachineHote">Volume source</label>
+        <input type="text" class="form-control" id="volumeMachineHote" placeholder="/tmp" formControlName="volumeMachineHote">
+      </div>
+
+      <div class="form-group" style="width: 220px">
+        <label for="volumeConteneur">Volume destination</label>
+        <input type="text" class="form-control" id="volumeConteneur" placeholder="/tmp" formControlName="volumeConteneur">
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between;">
+      <div class="form-group" style="width: 220px">
+        <label for="portHost">Port hote</label>
+        <input type="text" class="form-control" id="portHost" placeholder="8000" formControlName="portHost">
+      </div>
+
+      <div class="form-group" style="width: 220px">
+        <label for="portExport">Port export</label>
+        <input type="text" class="form-control" id="portExport" placeholder="80/tcp" formControlName="portExport">
+      </div>
+    </div>
+    <button *ngIf="fGroup.valid" type="submit" (click)="handleClickAddContainer()" class="btn btn-primary">Créer le conteneur</button>
+    <button *ngIf="fGroup.invalid" class="btn btn-secondary">Invalide</button>
+  </div>
+    <div style="margin-top:27px;">
+      <app-variables-env [fGroup]="fGroup"></app-variables-env>
+    </div>
+  </div>
+  </form>
+</div>

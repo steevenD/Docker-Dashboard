@@ -1,0 +1,15 @@
+.btn-delete {
+    background: red;
+    border-radius: 100px;
+    height: 25px;
+    width: 25px;
+    color: white;
+    padding-left: 8px;
+    margin-left: 10px;
+    margin-top: 3px;
+    cursor: pointer;    
+}
+
+.variable{
+    display: flex;
+}

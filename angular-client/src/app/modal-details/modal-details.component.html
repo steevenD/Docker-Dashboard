@@ -1,0 +1,61 @@
+<div class="title">
+    <p class="details">Détails</p>
+    <p class="btn-close" (click)="hancleClickClose()">X</p>
+</div>
+<div class='contenu'>
+    <h2>Commande</h2>
+    <div *ngFor="let cmd of data?.details?.Config?.Cmd">
+        {{cmd}}
+    </div>
+    <br/>
+    <h2>Variables d'environnement</h2>
+    <div *ngFor="let env of data?.details?.Config?.Env">
+        {{env}}
+    </div>
+    <br/>
+    <h2>Ports</h2>
+    <div>{{data?.port?.IP}}:{{data?.port?.PrivatePort}}->{{data?.port?.PublicPort}}/{{data?.port?.Type}}</div>
+    <h2>Date de création</h2>
+    <div>
+        {{data?.details?.Created}}
+    </div>
+    <h2>Volume</h2>
+    <div *ngFor="let bind of data?.details?.HostConfig?.Binds">
+        {{bind}}
+    </div>
+    <h2>Nano CPU</h2>
+    <div>
+        {{data?.details?.HostConfig?.NanoCpus}}
+    </div>
+    <h2>Mémoire RAM</h2>
+    <div>
+        {{data?.details?.HostConfig?.Memory}}
+    </div>
+    <h2>ID</h2>
+    <div>
+        {{data?.details?.Id}}
+    </div>
+    <h2>Image ID</h2>
+    <div>
+        {{data?.details?.Image}}
+    </div>
+    <h2>Volumes</h2>
+    <div *ngFor="let mount of data?.details?.Mounts">
+        Type : {{mount?.Type}}
+        <br/> Source : {{mount?.Source}}
+        <br/> Destination : {{mount?.Destination}}
+    </div>
+    <h2>Nom</h2>
+    <div>
+        {{data?.details?.Name}}
+    </div>
+    <h2>Plateforme</h2>
+    <div>
+        {{data?.details?.Platform}}
+    </div>
+    <h2>Etat</h2>
+    <div>
+        {{data?.details?.State?.Status}} Started At : {{data?.details?.State?.StartedAt}}
+    </div>
+</div>
+<div (click)="hancleClickClose()" class='fermer'>FERMER</div>
